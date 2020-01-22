@@ -1,0 +1,31 @@
+{
+  "name": "autoscale-ci-aws",
+  "version": "0.0.3",
+  "description": "Autoscale AWS Continuous Integration Tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "audit-check": "npm audit",
+    "vbump-patch": "npm run audit-check; npm version patch -m \"bump version to %s for a release.\""
+  },
+  "bin": {
+    "autoscale-ci-aws": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fortinet-devops-tool/autoscale-ci-aws.git"
+  },
+  "author": "Jayden Liang (jliang01@fortinet.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fortinet-devops-tool/autoscale-ci-aws/issues"
+  },
+  "homepage": "https://github.com/fortinet-devops-tool/autoscale-ci-aws#readme",
+  "dependencies": {
+    "commander": "^4.1.0",
+    "inquirer": "^7.0.3",
+    "semver": "^7.1.1",
+    "shelljs": "^0.8.3",
+    "aws-sdk": "^2.607.0"
+  }
+}
