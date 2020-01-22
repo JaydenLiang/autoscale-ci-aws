@@ -1,0 +1,141 @@
+[
+    {
+        "name": "Update FortiOS Version selection parameter on new vpc template",
+        "type": "parameter",
+        "product": "fortigate",
+        "templateName": "autoscale-new-vpc.template",
+        "nodePath": "Parameters.FortiOSVersion"
+    },
+    {
+        "name": "Update FortiOS Version selection parameter on existing vpc template",
+        "type": "parameter",
+        "product": "fortigate",
+        "templateName": "autoscale-existing-vpc.template",
+        "nodePath": "Parameters.FortiOSVersion"
+    },
+    {
+        "name": "Update AMI Id map for FortiGate BYOL in desired regions.",
+        "type": "ami",
+        "product": "fortigate",
+        "model": "byol",
+        "keyPath": "Mappings.ProductVersionMap.FortiGateByol",
+        "mapPath": "Mappings.AWSAMIRegionMap",
+        "keyPattern": "FGTVM64BYOL${versionNum}",
+        "templateName": "autoscale-main.template",
+        "amiFinder": {
+            "keyName": "name",
+            "keyPattern": "FortiGate-VM64-AWS*",
+            "modelPattern": "(?<=FortiGate-VM64-AWS)(ONDEMAND)?\\sbuild[0-9]+\\s\\(?([0-9]+.[0-9]+.[0-9]+)?\\)?",
+            "modelMatching": {
+                "byol": "",
+                "payg": "ONDEMAND"
+            }
+        },
+        "regions": [
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ca-central-1",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+        ]
+    },
+    {
+        "name": "Update AMI Id map for FortiGate PAYG in desired regions.",
+        "type": "ami",
+        "product": "fortigate",
+        "model": "payg",
+        "keyPath": "Mappings.ProductVersionMap.FortiGatePayg",
+        "mapPath": "Mappings.AWSAMIRegionMap",
+        "keyPattern": "FGTVM64PAYG${versionNum}",
+        "templateName": "autoscale-main.template",
+        "amiFinder": {
+            "keyName": "name",
+            "keyPattern": "FortiGate-VM64-AWS*",
+            "modelPattern": "(?<=FortiGate-VM64-AWS)(ONDEMAND)?\\sbuild[0-9]+\\s\\(?([0-9]+.[0-9]+.[0-9]+)?\\)?",
+            "modelMatching": {
+                "byol": "",
+                "payg": "ONDEMAND"
+            }
+        },
+        "regions": [
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ca-central-1",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+        ]
+    },
+    {
+        "name": "Update FortiAnalyzer Version selection parameter on new vpc template",
+        "type": "parameter",
+        "product": "fortianalyzer",
+        "templateName": "autoscale-new-vpc.template",
+        "nodePath": "Parameters.FortiAnalyzerVersion"
+    },
+    {
+        "name": "Update FortiAnalyzer Version selection parameter on existing vpc template",
+        "type": "parameter",
+        "product": "fortianalyzer",
+        "templateName": "autoscale-existing-vpc.template",
+        "nodePath": "Parameters.FortiAnalyzerVersion"
+    },
+    {
+        "name": "Update AMI Id map for FortiAnalyzer BYOL in desired regions.",
+        "type": "ami",
+        "product": "fortianalyzer",
+        "model": "payg",
+        "keyPath": "Mappings.ProductVersionMap.FortiAnalyzerPayg",
+        "mapPath": "Mappings.AWSAMIRegionMap",
+        "keyPattern": "FAZVM64PAYG${versionNum}",
+        "templateName": "autoscale-main.template",
+        "amiFinder": {
+            "keyName": "name",
+            "keyPattern": "FortiAnalyzer VM64-AWS*",
+            "modelPattern": "(?<=FortiAnalyzer VM64-AWS)(OnDemand)?\\sbuild[0-9]+\\s\\(?([0-9]+.[0-9]+.[0-9]+)?\\)?",
+            "modelMatching": {
+                "byol": "",
+                "payg": "OnDemand"
+            }
+        },
+        "regions": [
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ca-central-1",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+        ]
+    }
+]
