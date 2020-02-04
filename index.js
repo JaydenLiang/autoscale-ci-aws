@@ -174,6 +174,10 @@ const getProductImages = async (productCode, amiFinder, region, versions, model)
                 {
                     key: amiFinder.keyName,
                     value: amiFinder.keyPattern
+                },
+                {
+                    key: "is-public",
+                    value: "true"
                 }
             ]);
             img = result.Images.map(i => {
